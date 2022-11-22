@@ -1,6 +1,7 @@
+const GetTasks = require("../Controller/GetTasks");
+const PostTask = require("../Controller/PostTask");
 const express = require("express");
 const TaskRoute = express.Router();
-TaskRoute.get("/", (req, res) => {
-  res.send("send all the Task and probably their parent Todos");
-})
+TaskRoute.get("/", GetTasks);
+TaskRoute.post("/:TodoId", PostTask);
 module.exports = TaskRoute;
