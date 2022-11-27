@@ -7,8 +7,11 @@ const TaskRoute = require('./Routes/Task');
 const TodoRoute = require('./Routes/Todo');
 const LoginRoute = require("./Routes/LoginRoute");
 const RegisterRoute = require("./Routes/RegisterRoute");
+var cookies = require("cookie-parser");
+
 App.use(express.json());
 App.use(express.json());
+App.use(cookies());
 App.use(express.urlencoded({ extended: true }));
 App.set('view engine', 'ejs');
 App.use("/", Introrouter);

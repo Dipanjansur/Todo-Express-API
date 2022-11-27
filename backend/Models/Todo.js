@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const todo = mongoose.Schema({
+	email: String,
 	tittle: { type: String, require: true },
 	todo: { type: [String] }
 });

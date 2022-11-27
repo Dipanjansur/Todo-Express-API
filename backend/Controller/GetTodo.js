@@ -9,7 +9,7 @@ const GetAllTodos = async (req, res) => {
 const GetTodoByID = async (req, res) => {
   const { TodoId } = req.params;
   console.log(TodoId);
-  const value = await Todo.findById(TodoId);
+  const value = await Todo.find({ _id: TodoId });
   if (!value) {
     res.status(404).send("no collection is found");
   }
