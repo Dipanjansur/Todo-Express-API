@@ -1,8 +1,8 @@
 const Todo = require("../Models/Todo");
 const GetAllTodos = async (req, res) => {
-  const value = await Todo.find();
   const email = req.cookies.email;
-  console.log(email);
+  const value = await Todo.find({ email: email });
+
   if (!value) {
     res.status(404).send("no collection is found");
   }

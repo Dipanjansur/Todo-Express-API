@@ -6,7 +6,7 @@ const UpdateCOntroller = async (req, res) => {
   if (!Tittle) {
     res.status(400).send("enter Id and Tittle and to continue");
   }
-  const value = await Todo.findById(TodoId);
+  const value = await Todo.findById({ _id: TodoId, email: email });
   if (!value) {
     res.status(400).send("Sorry this Todo list is not avaailble");
   } else {
