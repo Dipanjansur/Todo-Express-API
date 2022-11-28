@@ -1,5 +1,6 @@
 const GetTasks = async (req, res) => {
-  const value = await Todo.find();
+  const email = req.cookies.email;
+  const value = await Todo.find({ email });
   if (!value) {
     res.status(404).send("no Tasks to be found");
   }
